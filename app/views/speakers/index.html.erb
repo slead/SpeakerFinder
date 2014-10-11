@@ -1,0 +1,10 @@
+<h1>Speakers</h1>
+
+<table>
+<% @speakers.each do |speaker| %>
+  <tr>
+    <td><%= speaker.name %></td>
+    <td><%= speaker.email %></td>
+  </tr>
+<% end %>
+</table>
