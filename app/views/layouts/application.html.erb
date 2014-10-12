@@ -36,49 +36,42 @@
   
       <%= javascript_include_tag "application" %>
 	</head>
+	
+	
 	<body>
 	
-	 <!-- Start of header -->
-	     <div class="navbar navbar-default navbar-static-top">
-	       <div class="container">
-	         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-	           <span class="icon-bar"></span>
-	           <span class="icon-bar"></span>
-	           <span class="icon-bar"></span>
-	         </button>
-	         <a class="navbar-brand" href="#">Speaker Finder</a>
-	         <div class="navbar-collapse collapse navbar-responsive-collapse">
-	           <ul class="nav navbar-nav">
-	             <li><%= link_to "Speakers", speakers_path %></li>
-	           </ul>
-	         </div>
-	       </div>
-	     </div>
-	     <!-- End of header -->
-	 
-	     <!-- Start of primary container -->
-	     <div class="container">
-	       <div class="row">
-	         <div class="col-lg-12">
-	           <%= bootstrap_flash %>
-	           <%= yield %>
-	         </div>
-	       </div>
-	     </div>
-	     <!-- End of prmary container -->
-	 
-	     <!-- Start of footer -->
-	     <div class="container">
-	       <div class="row">
-	         <div class="col-lg-12">
-	           <footer>
-	             <p>&copy; Stephen Lead 2014</p>
-	           </footer>
-	         </div>
-	       </div>
-	     </div>
-	     <!-- End of footer -->
-	 
+	      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	        <div class="container">
+	          <div class="navbar-header">
+	            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+	              <span class="sr-only">Toggle navigation</span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	              <span class="icon-bar"></span>
+	            </button>
+	            <%= link_to "Speaker Finder", root_path, :class => "navbar-brand" %>
+	          </div>
+	          <div class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+	              <li><%= link_to "Speakers", speakers_path %></li>
+	              <li><a href="#contact">About</a></li>
+	              <li><a href="#contact">Contact</a></li>
+	            </ul>
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+	  
+	      <div class="container">
+          <%= yield %>	  
+	  
+	      </div><!-- /.container -->
+	      
+	      <div class="footer">
+          <div class="container">
+            <p class="text-muted">&copy Stephen Lead, 2014</p>
+          </div>
+        </div>
+	      
 	
-		</body>	
+	</body>
 </html>
