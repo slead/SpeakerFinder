@@ -5,14 +5,14 @@ class SpeakersController < ApplicationController
   end
   
   def new
-  
+    @speaker = Speaker.new
   end
   
   def create
     @speaker = Speaker.new(speaker_params)
     if @speaker.save
       flash[:success] = "Speaker #{@speaker.name} saved successfully."
-      redirect_to @speaker
+      redirect_to speakers_path
     else
       render :new
     end
