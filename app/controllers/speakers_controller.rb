@@ -18,12 +18,32 @@ class SpeakersController < ApplicationController
     end
   end
   
-  def destroy
+  def edit
+    @speaker = Speaker.find(params[:id])
+  end
   
+  def destroy
+    @speaker = Speaker.find(params[:id])
+    @speaker.destroy
+  
+    respond_to do |format|
+      format.html { redirect_to(speakers_url) }
+      format.xml  { head :ok }
+    end
   end
   
   def show
     @speaker = Speaker.find(params[:id])
+  end
+  
+  def update
+    @speaker = Speaker.find(params[:id])
+    if @speaker.update_attributes(speaker_params)
+      flash[:success] = "Speaker #{@speaker.name} updated successfully."
+      redirect_to speakers_path
+    else
+      render :edit
+    end
   end
   
   private
