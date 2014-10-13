@@ -271,8 +271,8 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/header_bg.jpg) no-repeat center top;
-	margin-top: -50px;
+	background: url('header_bg.jpg');
+	margin-top: 50px;
 	padding-top:120px;
 	text-align:center;
 	background-attachment: relative;
@@ -375,8 +375,8 @@ a:after {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    padding-top: 30px;
-    padding-bottom: 70px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     margin-top: 45px;
 
 
@@ -412,24 +412,24 @@ a:after {
 /* Section Dividers Backgrounds */
 
 .divider1 {
-	background-image: url('../img/bg/divider1.jpg')
+	background: url('divider1.jpg'); 
 }
 
 .divider2 {
-	background-image: url('../img/bg/divider2.jpg')
+	background: url('divider2.jpg'); 
 }
 
 .divider3 {
-	background-image: url('../img/bg/divider3.jpg');
+	background: url('divider3.jpg');
 	margin-top: 0px;
 }
 
 .divider4 {
-	background-image: url('../img/bg/divider4.jpg')
+	background: url('divider4.jpg');
 }
 
 .divider6 {
-	background-image: url('../img/bg/divider6.jpg')
+	background: url('divider6.jpg');
 }
 
 
