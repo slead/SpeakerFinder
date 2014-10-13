@@ -49,7 +49,11 @@
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	            <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
 	          </button>
-	          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span class="icon icon-shield" style="font-size:18px; color:#3498db;"></span></a>
+	          
+	          <%= link_to root_path, class: 'navbar-brand hidden-xs hidden-sm' do %>
+	              <span id="span" class="icon icon-shield" style="font-size:18px; color:#3498db;"></span>
+	          <% end %>
+	          
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
@@ -66,22 +70,10 @@
 			<%= yield %>
 	
 			
-			<!-- ==== SECTION DIVIDER6 ==== -->
-			<section class="section-divider textdivider divider6">
-				<div class="container">
-					<h1>Find your next awesome speaker</h1>
-					<hr>
-					<p><a class="icon icon-twitter" href="https://www.facebook.com/speakerfinder"></a> | <a class="icon icon-facebook" href="https://twitter.com/speaker_finder"></a></p>
-				</div><!-- container -->
-			</section><!-- section -->
-			
 			<div class="container" id="contact" name="contact">
 				<div class="row">
 				<br>
-					<h1 class="centered">THANKS FOR VISITING US</h1>
 					<hr>
-					<br>
-					<br>
 					<div class="col-lg-4">
 						<h3>Contact Information</h3>
 						<p>
