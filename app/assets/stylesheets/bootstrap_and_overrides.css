@@ -8,4 +8,12 @@
   
   body {
     margin-top: 50px;
+    
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  
+  #speakers {
+    min-height: 75%;
+
   }

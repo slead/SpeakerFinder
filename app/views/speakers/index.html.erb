@@ -1,10 +1,29 @@
-<h1>Speakers</h1>
-
-<table>
-<% @speakers.each do |speaker| %>
-  <tr>
-    <td><%= speaker.name %></td>
-    <td><%= speaker.email %></td>
-  </tr>
-<% end %>
-</table>
+<div id="speakers" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Speakers</h1>
+      
+      <table class="table table-striped">
+      <thead> 
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>About</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <% @speakers.each do |speaker| %>
+        <tr>
+          <td><%= speaker.name %></td>
+          <td><%= speaker.email %></td>
+          <td><%= speaker.about %></td>
+          <td>
+          <%= link_to 'Edit', edit_speaker_path(speaker), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', speaker_path(speaker), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+    </div><!--col-md-12-->
+  </div><!--row-->
+</div><!--container-->
