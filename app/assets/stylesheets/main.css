@@ -411,25 +411,9 @@ a:after {
 
 /* Section Dividers Backgrounds */
 
-.divider1 {
-	background: url('divider1.jpg'); 
-}
-
-.divider2 {
-	background: url('divider2.jpg'); 
-}
-
-.divider3 {
-	background: url('divider3.jpg');
-	margin-top: 0px;
-}
-
-.divider4 {
-	background: url('divider4.jpg');
-}
 
 .divider6 {
-	background: url('divider6.jpg');
+	background: url('footer_bg.jpg');
 }
 
 
