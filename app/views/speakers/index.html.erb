@@ -16,9 +16,9 @@
           <td><%= link_to speaker.name, speaker_path(speaker) %></td>
           <td><%= speaker.email %></td>
           <td>
-          <%= link_to 'Edit', edit_speaker_path(speaker), :class => 'btn btn-mini' %>
-          <%= link_to 'Delete', speaker_path(speaker), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-          
+          <%= link_to 'Edit', edit_speaker_path(speaker), :class => 'fa fa-icon icon fa-edit' %>
+          <%= link_to 'Delete', speaker_path(speaker), :method => :delete, :confirm => 'Are you sure?', :class => 'fa fa-icon icon fa-trash' %>
+         
           </td>
         </tr>
       <% end %>
@@ -28,7 +28,7 @@
   
   <div class="row">
     <div class = "col-md-12">
-      <%= link_to "Add new Speaker", new_speaker_path, class: 'btn btn-default' %>
+      <%= link_to " Add new Speaker", new_speaker_path, class: 'fa fa-icon fa-plus-circle' %>
     </div>
   </div>
   

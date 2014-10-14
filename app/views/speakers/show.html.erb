@@ -2,14 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <h1><%= @speaker.name %></h1>
-      
       <%= @speaker.about %>
     </div><!--col-md-12-->
   </div><!--row-->
   
-  <div class="row">
-    <div class = "col-md-12">
-      <%= link_to "Back to Speakers", speakers_path, class: 'btn btn-default' %>
+  <div class="row actions">
+    <div class="col-md-12">
+      <%= link_to " Back to Speakers", speakers_path, class: 'icon fa fa-arrow-circle-left' %>
     </div>
   </div>
   
