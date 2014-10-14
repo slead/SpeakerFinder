@@ -15,5 +15,10 @@
   
   #speakers {
     min-height: 75%;
-
+    margin-bottom: 50px;
+  }
+  
+  #speaker {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
