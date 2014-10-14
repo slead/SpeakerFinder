@@ -1,16 +1,42 @@
-<div id="speaker" class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1><%= @speaker.name %></h1>
-      <%= @speaker.about %>
-    </div><!--col-md-12-->
-  </div><!--row-->
-  
-  <div class="row actions">
-    <div class="col-md-12">
-      <%= link_to " Back to Speakers", speakers_path, class: 'icon fa fa-arrow-circle-left' %>
-    </div>
+<div class="row actions">
+  <div class="col-md-12">
+    <%= link_to " Back to Speakers", speakers_path, class: 'icon fa fa-arrow-circle-left' %>
   </div>
-  
-</div><!--#speaker-->
+</div>
 
+<div class="container" id="speaker" name="<%= @speaker.name %>">
+	<div class="row white">
+	<br>
+		<h1 class="centered"><%= @speaker.name %></h1>
+		<hr>
+		
+		<div class="col-md-9">
+			<%= @speaker.about %>
+		</div><!-- col-lg-6 -->
+		
+		<div class="col-md-3">
+		  <h4>Contact <%= @speaker.name %></h4>
+		  <p>
+		  
+		    <span class="fa icon fa-home"></span> <%= @speaker.city %><br/>
+		    <%= mail_to @speaker.email, :class => 'fa icon fa-envelope' do %>
+		        <span id="span"><%= @speaker.email %></span>
+		    <% end %><br/>
+		    
+		    <% if @speaker.twitter_handle %>
+  		    <%= link_to "https://www.twitter.com/" + @speaker.twitter_handle, :class => 'fa icon fa-twitter' do %>
+  		        <span id="span"><%= @speaker.twitter_handle %></span>
+  		    <% end %><br/>
+  		  <% end %>
+  		  
+  		  <% if @speaker.website %>
+    	    <%= link_to @speaker.website, :class => 'fa icon fa-laptop' do %>
+    	        <span id="span"><%= @speaker.website %></span><br/>
+    	    <% end %>
+    	  <% end %>
+		  </p>
+						
+		</div><!-- col-lg-6 -->
+	</div><!-- row -->
+		
+</div><!-- container -->

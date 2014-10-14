@@ -14,6 +14,11 @@ class SpeakersController < ApplicationController
       flash[:success] = "Speaker #{@speaker.name} saved successfully."
       redirect_to speakers_path
     else
+      errors = []
+      @speaker.errors.full_messages.each do |msg|
+        errors << msg
+      end
+      flash.now[:error] = errors
       render :new
     end
   end

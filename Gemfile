@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'byebug'
 gem 'coffee-rails', '~> 4.0'
 gem "font-awesome-rails"
 gem 'jquery-rails'
+gem 'pg', '~> 0.17'
 gem 'rails', '4.1.5'
-gem 'sqlite3'
+# gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks'
