@@ -1,0 +1,18 @@
+<%= form_for @speaker, html: { class: 'well form', role: 'form' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :about %>
+    <%= f.text_area :about, { class: 'form-control', size: "30x10" } %>
+  </div>
+  <div class="actions">
+    <%= link_to " Cancel", speakers_path, class: 'icon fa fa-arrow-circle-left' %>
+    <%= f.submit 'Save Speaker', class: 'btn btn-default' %>
+  </div>
+<% end %>
