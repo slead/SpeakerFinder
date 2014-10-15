@@ -2,17 +2,17 @@
 
   <div id="speakerContactDetails" class="row">
     <div class="col-md-3">
-      <div class="form-group has-error">
+      <div class="form-group">
         <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control noBlank' %>
       </div>
-      <div class="form-group has-error">
+      <div class="form-group">
         <%= f.label :email %>
-        <%= f.text_field :email, class: 'form-control' %>
+        <%= f.text_field :email, class: 'form-control noBlank' %>
       </div>
-      <div class="form-group has-error">
+      <div class="form-group">
         <%= f.label :city %>
-        <%= f.text_field :city, class: 'form-control' %>
+        <%= f.text_field :city, class: 'form-control noBlank' %>
       </div>
       <div class="form-group">
         <%= f.label :twitter_handle %>
