@@ -56,7 +56,7 @@ class SpeakersController < SecuredController
   
   private
     def speaker_params
-      params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about)
+      params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city)
     end
   
 end
