@@ -18,8 +18,8 @@
           <td><%= speaker.email %></td>
           <td><%= speaker.city %></td>
           <td>
-          <%= link_to 'Edit', edit_speaker_path(speaker), :class => 'fa fa-icon icon fa-edit' %>
-          <%= link_to 'Delete', speaker_path(speaker), :method => :delete, :confirm => 'Are you sure?', :class => 'fa fa-icon icon fa-trash' %>
+          <%= link_to 'Edit', edit_speaker_path(speaker), class: 'fa fa-icon icon fa-edit' %>
+          <%= link_to 'Delete', speaker_path(speaker), :method => :delete, :confirm => 'Are you sure?', class: 'fa fa-icon icon fa-trash' %>
          
           </td>
         </tr>
