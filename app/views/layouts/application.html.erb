@@ -35,12 +35,12 @@
       <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   
       <%= javascript_include_tag "application" %>
+     
 	</head>
 	
 	
 	<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
-	  
-	  
+	
 	  	<div id="navbar-main">
 	      <!-- Fixed navbar -->
 	    <div class="navbar navbar-inverse navbar-fixed-top">
@@ -60,15 +60,21 @@
 	            <li><%= link_to "Find a speaker", speakers_path %></li>
 	            <li><%= link_to "About", root_path(anchor: "about" ), { class: "smoothScroll" }%></li>
 	            <li><%= link_to "Contact", root_path(anchor: "contact"), { class: "smoothScroll" }%></li>
+	          </ul>
+	          
+	          <ul class="hmenu nav navbar-nav navbar-right">
+	            <%= render 'devise/menu/registration_items' %>
+	            <%= render 'devise/menu/login_items' %>
+	          </ul>
+	          
 	        </div><!--/.nav-collapse -->
+	        
+<!--	        <% if current_user %>
+	          <%= link_to 'Sign Out', destroy_user_session_path, title: 'Sign Out', method: :delete %>
+	        <% end %>-->
+	        
 	      </div>
 	    </div>
-	    </div>
-	    
-	    <!--Devise messages-->
-	    <div id="notices"> 
-	      <p class="notice"><%= notice %></p>
-	      <p class="alert"><%= alert %></p>
 	    </div>
 	    
 	    <div class="container">

@@ -1,4 +1,7 @@
-class SpeakersController < ApplicationController
+# This controller inherits from SecuredController. SecuredController uses
+# Devise to make sure that the user is authenticated prior to invoking the
+# specified actions
+class SpeakersController < SecuredController
 
   def index
     @speakers = Speaker.all
