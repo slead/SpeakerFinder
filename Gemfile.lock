@@ -131,7 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0)
-  devise
+  devise (~> 3.2)
   font-awesome-rails
   jquery-rails
   pg (~> 0.17)
