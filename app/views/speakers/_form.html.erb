@@ -1,10 +1,10 @@
-<%= simple_form_for @speaker, defaults: { input_html: { class: 'form-control', label: false } } do |f| %>
+<%= simple_form_for @speaker, defaults: { input_html: { class: 'form-control speaker_input' }, label: false } do |f| %>
 
-  <div id="speakerContactDetails" class="row">
-    <div class="col-md-3">
-        <%= f.input :name, placeholder: 'Name' %>
-        <%= f.input :email, placeholder: 'Email address' %>
-        <%= f.input :city, placeholder: 'City' %>
+  <div class="row">
+    <div id="speakerContactDetails" class="col-md-3">
+        <%= f.input :name, placeholder: 'Name *', label: false %>
+        <%= f.input :email, placeholder: 'Email address *', label: false %>
+        <%= f.input :city, placeholder: 'City *' %>
         <%= f.input :blurb, placeholder: 'Short blurb' %>
         <%= f.input :twitter_handle, placeholder: '@Twitter handle' %>
         <%= f.input :website, placeholder: 'Website' %>
@@ -12,8 +12,7 @@
     
     <div id="speakerAbout" class="col-md-8 col-md-offset-1">
       <div class="form-group">
-        <%= f.label :about %>
-        <%= f.text_area :about, { class: 'form-control', size: "30x12" } %>
+        <%= f.text_area :about, { class: 'form-control', size: "30x12", :placeholder => "Please enter some detailed information about your talents, experience, etc" } %>
       </div>
     </div>
   </div>

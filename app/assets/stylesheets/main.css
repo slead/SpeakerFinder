@@ -604,6 +604,14 @@ a:after {
     font-size: 13px;
 }
 
+#speakerContactDetails .help-inline {
+    display: none;
+} 
+
+form .speaker_input {
+  margin-bottom: 10px;
+}
+
 
 /* ==========================================================================
    MEDIA QUERIES
