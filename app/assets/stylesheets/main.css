@@ -579,7 +579,7 @@ a:after {
 }
 
 .speakers-bg h4 {
-	color: #dadada;
+	/*color: #dadada;*/
 	padding-top: 0px;
 }
 
@@ -591,6 +591,12 @@ a:after {
 .speakers-content {
 	padding-top: 10px;
 	background: #f2f2f2;
+}
+
+.speakers-content > p {
+    font-family: helvetica,sans-serif;
+    font-size: 13px;
+    line-height: 20px;
 }
 
 

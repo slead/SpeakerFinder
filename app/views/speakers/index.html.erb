@@ -14,12 +14,12 @@
   		<div class="col-md-6 speakers-bg">
   			<div class="col-md-4 centered">
   			<br>
-  				<p><img class="img img-circle" src="https://pbs.twimg.com/profile_images/479185864476463104/TuZKdXwx_400x400.png" width="60px" height="60px"></p>
+  				<p><img class="img img-circle" src="http://powermail4joomla.com/pmj25/images/generic_user_image.jpg" width="60px" height="60px"></p>
   				<h4><%= link_to speaker.name, speaker_path(speaker) %></h4>
-  				<h5>Published Aug 30.</h5>
+  				<h5>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</h5>
   			</div>
   			<div class="col-md-8 speakers-content">
-  				<h3>Short speaker blurb</h3>
+  				<h4><%= speaker.blurb %></h4>
   				<p><%= truncate(speaker.about, length: 300) %></p>
   				<p><%= link_to "Read more", speaker_path(speaker) %></p>
   				<br>
