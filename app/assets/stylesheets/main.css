@@ -568,27 +568,27 @@ a:after {
 
 
 /* ==========================================================================
-   Blog Section
+   Speakers Section
    ========================================================================== */
 
-.blog-bg {
+.speakers-bg {
 	background: #2b2b2b;
 	padding-right: 0px;
 	padding-left: 0px;
-	
+	margin-bottom: 25px;	
 }
 
-.blog-bg h4 {
+.speakers-bg h4 {
 	color: #dadada;
 	padding-top: 0px;
 }
 
-.blog-bg h5 {
+.speakers-bg h5 {
 	color: #dadada;
 	font-size: 11px;
 }
 
-.blog-content {
+.speakers-content {
 	padding-top: 10px;
 	background: #f2f2f2;
 }
