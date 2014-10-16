@@ -1,0 +1,66 @@
+<div class="container" id="contact" name="contact">
+  <div class="row">
+    <br>
+    <hr>
+    <div class="col-md-6 col-md-offset-4">
+      <h3>Log in</h3>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal" ) do |f| %>
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+      
+        <div><%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %></div>
+      
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+        <% end -%>
+      
+        <div><%= f.submit "Log in" %></div>
+      <% end %>
+      
+      <%= render "devise/shared/links" %>
+    
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="container" id="contact" name="contact">
+			<div class="row">
+			<br>
+				<hr>
+				
+				<div class="col-lg-4">
+					<h3>Newsletter</h3>
+					<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<p>
+						<form class="form-horizontal" role="form">
+						  <div class="form-group">
+						    <label for="inputEmail1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <label for="text1" class="col-lg-4 control-label"></label>
+						    <div class="col-lg-10">
+						      <input type="text" class="form-control" id="text1" placeholder="Your Name">
+						    </div>
+						  </div>
+						  <div class="form-group">
+						    <div class="col-lg-10">
+						      <button type="submit" class="btn btn-success">Sign up</button>
+						    </div>
+						  </div>
+					   </form><!-- form --*>
+					</p>
+				</div><!-- col --*>
+				
+				<div class="col-lg-4">
+					<h3>Support Us</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+				</div><!-- col --*>
+
+			</div><!-- row --*>
+		
+		</div><!-- container --*>-->

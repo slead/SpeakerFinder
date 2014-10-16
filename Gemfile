@@ -13,10 +13,6 @@ gem 'twitter-bootstrap-rails', '~> 3.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.0'
 
-gem 'sdoc', '~> 0.4.0',          group: :doc
-
-gem 'spring',        group: :development
-
 group :production, :staging do
   gem 'rails_12factor'
 end
