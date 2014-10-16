@@ -1,31 +1,13 @@
-<%= simple_form_for @speaker, html: { class: 'well form form-horizontal', role: 'form' } do |f| %>
+<%= simple_form_for @speaker, defaults: { input_html: { class: 'form-control', label: false } } do |f| %>
 
   <div id="speakerContactDetails" class="row">
     <div class="col-md-3">
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.text_field :email, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :city %>
-        <%= f.text_field :city, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :blurb %>
-        <%= f.text_field :blurb, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :twitter_handle %>
-        <%= f.text_field :twitter_handle, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :website %>
-        <%= f.text_field :website, class: 'form-control' %>
-      </div>
+        <%= f.input :name, placeholder: 'Name' %>
+        <%= f.input :email, placeholder: 'Email address' %>
+        <%= f.input :city, placeholder: 'City' %>
+        <%= f.input :blurb, placeholder: 'Short blurb' %>
+        <%= f.input :twitter_handle, placeholder: '@Twitter handle' %>
+        <%= f.input :website, placeholder: 'Website' %>
     </div>
     
     <div id="speakerAbout" class="col-md-8 col-md-offset-1">

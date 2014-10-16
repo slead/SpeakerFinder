@@ -20,8 +20,8 @@
   			</div>
   			<div class="col-md-8 speakers-content">
   				<h4><%= speaker.blurb %></h4>
-  				<p><%= truncate(speaker.about, length: 300) %></p>
-  				<p><%= link_to "Read more", speaker_path(speaker) %></p>
+  				<p><%= truncate(speaker.about, length: 250) %></p>
+  				<span class="read-more"><%= link_to "Read more", speaker_path(speaker) %></span>
   				<br>
   			</div>
   		</div><!-- /col -->

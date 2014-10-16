@@ -40,9 +40,7 @@
 	</div><!-- row -->
 	
 	<% if user_signed_in? %>
-  	<%= link_to edit_speaker_path(@speaker) do %>
-  	  <i class="fa fa-pencil-square-o"></i>
-  	<% end %>
+  	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
   <% end %>
 		
 </div><!-- container -->

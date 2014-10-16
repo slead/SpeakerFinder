@@ -599,6 +599,11 @@ a:after {
     line-height: 20px;
 }
 
+.read-more {
+    font-family: helvetica,sans-serif;
+    font-size: 13px;
+}
+
 
 /* ==========================================================================
    MEDIA QUERIES
