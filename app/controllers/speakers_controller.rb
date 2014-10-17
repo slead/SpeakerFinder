@@ -4,7 +4,8 @@
 class SpeakersController < SecuredController
 
   def index
-    @speakers = Speaker.all
+#    @speakers = Speaker.all
+    @speakers = Speaker.paginate(page: params[:page])
   end
   
   def new
