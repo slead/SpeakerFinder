@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module SpeakerFinder
   class Application < Rails::Application
   
-    config.serve_static_assets = true
+    config.serve_static_assets = false
     config.assets.precompile += %w(vendor/modernizr *.png *.jpeg *.jpg *.gif)
     
     if defined?(Bundler)
