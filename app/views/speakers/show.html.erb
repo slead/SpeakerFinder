@@ -42,5 +42,12 @@
 	<% if user_signed_in? %>
   	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
   <% end %>
+  
+  <h3>Nearby Speakers</h3>
+  <ul>
+  <% for spk in @speaker.nearbys(500) %>
+    <li><%= link_to spk.name, speaker_path(spk) %></li>
+  <% end %>
+  </ul>
 		
 </div><!-- container -->
