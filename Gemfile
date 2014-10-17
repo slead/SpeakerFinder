@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0'
 gem 'devise', '~> 3.2'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'geocoder'
 gem 'jquery-rails'
 gem 'pg', '~> 0.17'
 gem 'rails', '4.1.5'

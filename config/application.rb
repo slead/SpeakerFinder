@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module SpeakerFinder
   class Application < Rails::Application
   
-    config.serve_static_assets = false
+    config.serve_static_assets = true
     config.assets.precompile += %w(vendor/modernizr *.png *.jpeg *.jpg *.gif)
     
     if defined?(Bundler)
@@ -22,7 +22,7 @@ module SpeakerFinder
     #Using Devise on Heroku with Ruby on Rails 3.1 requires setting:
     config.assets.initialize_on_precompile = true
     
-    config.assets.compile = false
+    config.assets.compile = true
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
