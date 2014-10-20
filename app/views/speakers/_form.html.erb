@@ -8,6 +8,7 @@
         <%= f.input :blurb, placeholder: 'Short blurb' %>
         <%= f.input :twitter_handle, placeholder: '@Twitter handle' %>
         <%= f.input :website, placeholder: 'Website' %>
+        <%= f.input :image_url, placeholder: 'Image URL' %>
     </div>
     
     <div id="speakerAbout" class="col-md-8 col-md-offset-1">
@@ -26,9 +27,3 @@
     </div>
   </div>
 <% end %>
-<!--
-<%= simple_form_for @speaker do |f| %>
-  <%= f.input :name, label: 'Your username please'%>
-  <%= f.input :email, required: false %>
-  <%= f.button :submit %>
-<% end %>-->

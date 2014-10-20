@@ -4,8 +4,8 @@
 class SpeakersController < SecuredController
 
   def index
-#    @speakers = Speaker.all
-    @speakers = Speaker.paginate(page: params[:page])
+    @speakers = Speaker.paginate(page: params[:page])    
+#    @speakers = Speaker.search(params[:search])
   end
   
   def new
@@ -57,7 +57,7 @@ class SpeakersController < SecuredController
   
   private
     def speaker_params
-      params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city, :blurb)
+      params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city, :blurb, :image_url)
     end
   
 end

@@ -1,0 +1,21 @@
+<div class="container" id="skills">
+<br>
+	<div class="row">
+		<br>
+		<h1 class="centered">Skills</h1>
+		<hr>
+		<br>
+		<br>
+	</div><!-- /row -->
+	
+	<div class="row">
+    <div class="col-md-6 skills-bg">
+    	<% @skills.each do |skill| %>
+    	  <div class="col-md-4 centered">
+          <%= skill.title %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+</div> <!--container-->

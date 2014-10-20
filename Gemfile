@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'byebug'
 gem 'coffee-rails', '~> 4.0'
 gem 'devise', '~> 3.2'
 gem 'font-awesome-rails'

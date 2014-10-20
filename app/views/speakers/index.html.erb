@@ -1,3 +1,11 @@
+<% form_tag speakers_path do %>
+  <p>here</p>
+  <p>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
 <div class="container" id="speakers">
 <br>
 	<div class="row">
@@ -9,7 +17,18 @@
 	</div><!-- /row -->
 	
 	<div class="row">
-	
+	  <h4>Search will go here</h4>
+	  <div class="col-md-12">
+      <% form_tag @speakers_path do %>
+        <p>
+          <%= text_field_tag :search %>
+          <%= submit_tag "Search" %>
+        </p>	    
+      <% end %>
+	  </div>
+	</div>
+	<div class="row">
+
 	  <% @speakers.each do |speaker| %>
   		<div class="col-md-6 speakers-bg">
   			<div class="col-md-4 centered">
@@ -33,7 +52,7 @@
 	
 	<div class="row">
 	  <div class="col-md-12">
-	    <%= will_paginate @speakers %>
+	    <!-- <%= will_paginate @speakers %>-->
 	  </div>
 	</div>
 	
