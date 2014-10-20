@@ -2,6 +2,10 @@
 # Devise to make sure that the user is authenticated prior to invoking the
 # specified actions
 class SpeakersController < SecuredController
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:notice] = 'The object you tried to access does not exist'
+    redirect_to :action => :index
+  end
 
   def index
     @speakers = Speaker.paginate(page: params[:page])    
