@@ -3,7 +3,7 @@
 # specified actions
 class SpeakersController < SecuredController
   rescue_from ActiveRecord::RecordNotFound do
-    flash[:notice] = 'The object you tried to access does not exist'
+    flash[:notice] = 'Sorry, that speaker does not exist'
     redirect_to :action => :index
   end
 
