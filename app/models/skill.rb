@@ -1,3 +1,3 @@
 class Skill < ActiveRecord::Base
-  belongs_to :speaker
+  has_many :speakers
 end
