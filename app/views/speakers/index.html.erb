@@ -1,15 +1,11 @@
 <div class="container" id="speakers">
-<br>
 	<div class="row">
-		<br>
 		<h1 class="centered">Speakers</h1>
 		<hr>
-		<br>
-		<br>
 	</div><!-- /row -->
 
 	<div class="row">
-	  <div class="col-md-12">
+	  <div class="col-md-12 centered">
       <form class="navbar-form" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search will go here">
@@ -30,8 +26,9 @@
       </form>
 	  </div>
 	</div>
+	<br>
+	
 	<div class="row">
-
 	  <% @speakers.each do |speaker| %>
   		<div class="col-md-6 speakers-bg">
   			<div class="col-md-4 centered">
@@ -47,8 +44,7 @@
   				<br>
   			</div>
   		</div><!-- /col -->
-  	<% end %>
-  	
+  	<% end %>  	
 	</div><!-- /row -->
 	<br>
 	<br>

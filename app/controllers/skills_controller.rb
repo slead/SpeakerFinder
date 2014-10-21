@@ -6,11 +6,12 @@ class SkillsController < SecuredController
     
   def new
     @skill = Skill.new
-    puts 'in new' 
     
   end
   
   def create
+    key = skill_params[:key]
+    puts key
     @skill = Skill.find_or_create_by(skill_params)
     if @skill.save
       flash[:success] = "Skill #{@skill.title} saved successfully."
@@ -43,7 +44,7 @@ class SkillsController < SecuredController
   
   private
     def skill_params
-      params.require(:skill).permit(:title)
+      params.require(:skill).permit(:title, :key)
     end
     
 end
