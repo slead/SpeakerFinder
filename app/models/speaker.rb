@@ -3,7 +3,7 @@ class Speaker < ActiveRecord::Base
   has_many :skills
   validates_presence_of :name, :email, :city
   validates :website, format: URI.regexp(%w(http https))
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, :case_sensitive => false
   validates :email, uniqueness: true
   validates :image_url, allow_blank: true, format: {
     with: %r{\.gif|jpg|png}i,
