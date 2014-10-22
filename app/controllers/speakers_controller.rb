@@ -9,9 +9,9 @@ class SpeakersController < SecuredController
 
   def index
     if params[:search]
-      @speakers = Speaker.search(params[:search])
+      @speakers = Speaker.search(params[:search]).order("name ASC")
     else
-      @speakers = Speaker.all
+      @speakers = Speaker.all.order("name ASC")
     end
   end
   

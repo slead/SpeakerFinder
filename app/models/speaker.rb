@@ -13,7 +13,6 @@ class Speaker < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
       obj.state = geo.state
-      obj.city = geo.city
       obj.country = geo.country_code
     end
   end
