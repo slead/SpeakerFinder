@@ -63,3 +63,8 @@
    #new_skill_form {
      padding-bottom: 50px;
    }
+   
+   /*Search form - tweak the width*/
+   #search_name {
+       width: 400px;
+   }

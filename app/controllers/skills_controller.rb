@@ -2,10 +2,10 @@ class SkillsController < SecuredController
   def index
     @skills = Skill.all
   end
-    
+
   def new
     @skill = Skill.new
-    
+
   end
   
   def create
@@ -24,23 +24,27 @@ class SkillsController < SecuredController
       render :new
     end
   end
-  
-  def edit  
+
+  def edit
+
   end
-  
-  def destroy 
+
+  def destroy
+
   end
-  
+
   def show
+
   end
   
   def update
+
   end
   
   private
   
-    def skill_params
-      params.require(:skill).permit(:title, :key)
-    end
+  def skill_params
+    params.require(:skill).permit(:title, :key)
+  end
     
 end

@@ -1,0 +1,35 @@
+Encoding:
+ Enabled: false
+
+LineLength:
+ Enabled: false
+
+ClassLength:
+ Enabled: false
+
+MethodLength:
+ Enabled: false
+
+RedundantSelf:
+ Enabled: false
+
+Documentation:
+ Enabled: false
+
+CyclomaticComplexity:
+ Enabled: false
+
+EmptyLinesAroundBody:
+ Enabled: false
+
+
+ClassAndModuleChildren:
+ Enabled: false
+
+DoubleNegation:
+ Enabled: false
+
+Style/TrailingWhitespace:
+  Description: 'Avoid trailing whitespace.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-trailing-whitespace'
+  Enabled: false

@@ -67,7 +67,8 @@ class SpeakersController < SecuredController
     end
 
     def search_params
-      params.require(:search).permit(:name)
+#      params.require(:search).permit(:name)
+      params.permit(:name)
     end
   
 end
