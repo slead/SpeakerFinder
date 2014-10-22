@@ -21,8 +21,6 @@ class SpeakersController < SecuredController
   end
   
   def create
-    #@search = Search.new(search_params)
-#    @search = Search.new()
     @speaker = Speaker.new(speaker_params)
     if @speaker.save
       flash[:success] = "Speaker #{@speaker.name} saved successfully."
@@ -67,8 +65,8 @@ class SpeakersController < SecuredController
     end
 
     def search_params
-#      params.require(:search).permit(:name)
-      params.permit(:name)
+      params.require(:search).permit(:name)
+     # params.permit(:name)
     end
   
 end
