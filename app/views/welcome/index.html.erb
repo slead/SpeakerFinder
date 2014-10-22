@@ -1,27 +1,10 @@
   <!-- ==== HEADERWRAP ==== -->
   <div id="headerwrap" id="home" name="home">
-  <header class="clearfix">
+    <header class="clearfix">
   	 		<h1>Speaker Finder</h1>
   	 		<p>The easy way to find great speakers for your conference</p>
-  	 		<form class="navbar-form" role="search">
-  	 		  <div class="form-group">
-  	 		    <input type="text" class="form-control" placeholder="Search for a speaker">
-  	 		  </div>
-  	 		  <!-- Split button -->
-  	 		  <div class="btn-group">
-  	 		    <button type="button" class="btn btn-primary">Search</button>
-  	 		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-  	 		      <span class="caret"></span>
-  	 		      <span class="sr-only">Toggle Dropdown</span>
-  	 		    </button>
-  	 		    <ul class="dropdown-menu" role="menu">
-  	 		      <li><a href="#">Find by name</a></li>
-  	 		      <li><a href="#">Find by city</a></li>
-  	 		      <li><a href="#">Find by skillset</a></li>
-  	 		    </ul>
-  	 		  </div>
-  	 		</form>
-  	</header>	    
+  	 		<%= render 'searches/search' %>
+    </header>	    
   </div><!-- /headerwrap -->
   
   <!-- ==== GREYWRAP ==== -->
@@ -68,24 +51,8 @@
   	<div class="container">
   		<h1>Find your next awesome speaker</h1>
   		<hr>
-  		<form class="navbar-form" role="search">
-  		  <div class="form-group">
-  		    <input type="text" class="form-control" placeholder="Search for a speaker">
-  		  </div>
-  		  <!-- Split button -->
-  		  <div class="btn-group">
-  		    <button type="button" class="btn btn-primary">Search</button>
-  		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-  		      <span class="caret"></span>
-  		      <span class="sr-only">Toggle Dropdown</span>
-  		    </button>
-  		    <ul class="dropdown-menu" role="menu">
-  		      <li><a href="#">Find by name</a></li>
-  		      <li><a href="#">Find by city</a></li>
-  		      <li><a href="#">Find by skillset</a></li>
-  		    </ul>
-  		  </div>
-  		</form>
+  		<%= render 'searches/search' %>
+  		
   	</div><!-- container -->
   </section><!-- section -->
   

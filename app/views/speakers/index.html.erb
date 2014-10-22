@@ -6,24 +6,7 @@
 
 	<div class="row">
 	  <div class="col-md-12 centered">
-      <form class="navbar-form" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search will go here">
-        </div>
-        <!-- Split button -->
-        <div class="btn-group">
-          <button type="button" class="btn btn-primary">Search</button>
-          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            <span class="caret"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Find by name</a></li>
-            <li><a href="#">Find by city</a></li>
-            <li><a href="#">Find by skillset</a></li>
-          </ul>
-        </div>
-      </form>
+      <%= render 'searches/search' %>
 	  </div>
 	</div>
 	<br>

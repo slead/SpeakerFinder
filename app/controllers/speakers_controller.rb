@@ -4,12 +4,16 @@
 class SpeakersController < SecuredController
   rescue_from ActiveRecord::RecordNotFound do
     flash[:notice] = 'Sorry, that speaker does not exist'
-    redirect_to :action => :index
+    redirect_to action: :index
   end
 
   def index
-    @speakers = Speaker.paginate(page: params[:page])    
-#    @speakers = Speaker.search(params[:search])
+    @search = Search.new(search_params)
+    if @search.name.nil?
+      @speakers = Speaker.paginate(page: params[:page])
+    else
+      @speakers = Speaker.where(name: @search.name).paginate(page: params[:page])
+    end
   end
   
   def new
@@ -17,6 +21,8 @@ class SpeakersController < SecuredController
   end
   
   def create
+    #@search = Search.new(search_params)
+#    @search = Search.new()
     @speaker = Speaker.new(speaker_params)
     if @speaker.save
       flash[:success] = "Speaker #{@speaker.name} saved successfully."
@@ -38,11 +44,6 @@ class SpeakersController < SecuredController
   def destroy
     @speaker = Speaker.find(params[:id])
     @speaker.destroy
-  
-    respond_to do |format|
-      format.html { redirect_to(speakers_url) }
-      format.xml  { head :ok }
-    end
   end
   
   def show
@@ -60,8 +61,13 @@ class SpeakersController < SecuredController
   end
   
   private
+  
     def speaker_params
       params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city, :blurb, :image_url)
+    end
+
+    def search_params
+      params.require(:search).permit(:name)
     end
   
 end
