@@ -65,6 +65,6 @@
    }
    
    /*Search form - tweak the width*/
-   #search_name {
-       width: 400px;
+   #search, #geo_search_city {
+       width: 250px;
    }

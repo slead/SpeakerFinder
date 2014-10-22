@@ -8,11 +8,10 @@ class SpeakersController < SecuredController
   end
 
   def index
-    @search = Search.new(search_params)
-    if @search.name.nil?
-      @speakers = Speaker.paginate(page: params[:page])
+    if params[:search]
+      @speakers = Speaker.search(params[:search])
     else
-      @speakers = Speaker.where(name: @search.name).paginate(page: params[:page])
+      @speakers = Speaker.all
     end
   end
   
@@ -60,13 +59,7 @@ class SpeakersController < SecuredController
   
   private
   
-    def speaker_params
-      params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city, :blurb, :image_url)
-    end
-
-    def search_params
-      params.require(:search).permit(:name)
-     # params.permit(:name)
-    end
-  
+  def speaker_params
+    params.require(:speaker).permit(:name, :website, :email, :twitter_handle, :about, :city, :blurb, :image_url)
+  end  
 end

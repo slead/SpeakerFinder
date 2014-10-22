@@ -11,7 +11,7 @@ class Speaker < ActiveRecord::Base
   }
   geocoded_by :city
   reverse_geocoded_by :latitude, :longitude do |obj, results|
-    if geo == results.first
+    if geo = results.first
       obj.state = geo.state
       obj.city = geo.city
       obj.country = geo.country_code
@@ -19,4 +19,10 @@ class Speaker < ActiveRecord::Base
   end
   after_validation :geocode, if: :city_changed?
   after_validation :reverse_geocode, if: :city_changed?
+
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("name like ?", "%#{query}%") 
+  end
+
 end
