@@ -43,6 +43,9 @@
   	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
   <% end %>
   
+  <h3>Skills and specialities</h3>
+  <p><em>Speaker's skills will be listed here once I figure out how to do that</em></p>
+  
   <h3>Nearby Speakers</h3>
   <ul>
   <% for spk in @speaker.nearbys(500) %>
