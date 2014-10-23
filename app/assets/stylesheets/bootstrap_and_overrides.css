@@ -65,6 +65,6 @@
    }
    
    /*Search form - tweak the width*/
-   #search, #geo_search_city {
+   #search, #geosearch {
        width: 250px;
    }

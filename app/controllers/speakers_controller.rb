@@ -10,6 +10,9 @@ class SpeakersController < SecuredController
   def index
     if params[:search]
       @speakers = Speaker.search(params[:search]).order("name ASC")
+    elsif params[:geosearch]
+      @speakers = Speaker.near(params[:geosearch], 500).order("name ASC")
+      puts params[:geosearch]
     else
       @speakers = Speaker.all.order("name ASC")
     end
