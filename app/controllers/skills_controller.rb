@@ -5,7 +5,6 @@ class SkillsController < SecuredController
 
   def new
     @skill = Skill.new
-
   end
   
   def create

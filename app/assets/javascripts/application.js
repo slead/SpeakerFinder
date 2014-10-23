@@ -15,3 +15,12 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $( ".btnClearSearch" ).click(function() {
+    alert("Clear the search box");
+    
+    //TODO - clear the search box
+    $("#" + this.dataset.searchbox).trigger("reset");
+  });
+});

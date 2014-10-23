@@ -68,3 +68,9 @@
    #search, #geosearch {
        width: 250px;
    }
+   
+   .btnClearSearch{
+       left: -22px;
+       position: relative;
+       cursor: pointer;
+   }
