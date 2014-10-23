@@ -20,7 +20,7 @@ class Speaker < ActiveRecord::Base
   after_validation :reverse_geocode, if: :city_changed?
 
   def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
+    #perform a case-insensitive seach by name
     where("LOWER(name) like ?", "%#{query.downcase}%") 
   end
 

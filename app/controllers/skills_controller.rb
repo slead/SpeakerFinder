@@ -9,8 +9,6 @@ class SkillsController < SecuredController
   end
   
   def create
-    key = skill_params[:key]
-    puts key
     @skill = Skill.find_or_create_by(skill_params)
     if @skill.save
       flash[:success] = "Skill #{@skill.title} saved successfully."
