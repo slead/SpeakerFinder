@@ -1,6 +1,7 @@
 # Model for speakers
 class Speaker < ActiveRecord::Base
   has_many :skills
+  has_many :comments, dependent: :destroy
   validates_presence_of :name, :email, :city
   validates :website, format: URI.regexp(%w(http https))
   validates :name, uniqueness: true, :case_sensitive => false

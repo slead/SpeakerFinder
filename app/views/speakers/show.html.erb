@@ -48,9 +48,20 @@
   
   <h3>Nearby Speakers</h3>
   <ul>
-  <% for spk in @speaker.nearbys(500) %>
+  <% @speaker.nearbys(500).each do |spk| %>
     <li><%= link_to spk.name, speaker_path(spk) %></li>
   <% end %>
   </ul>
+  
+  <h2>Comments</h2>
+  <ul>
+    <% @speaker.comments.each do |comment| %>
+      <li><%= comment.body %> </li>
+    <% end %>
+  </ul>
+  
+  <% if user_signed_in? %>
+    <%= render "comments/form" %>
+  <% end %>
 		
 </div><!-- container -->

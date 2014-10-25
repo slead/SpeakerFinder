@@ -18,9 +18,6 @@
 
 $(function() {
   $( ".btnClearSearch" ).click(function() {
-    alert("Clear the search box");
-    
-    //TODO - clear the search box
-    $("#" + this.dataset.searchbox).trigger("reset");
+    $("#" + this.dataset.searchbox).val('');
   });
 });
