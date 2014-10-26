@@ -7,17 +7,18 @@
 <div class="container" id="speaker" name="<%= @speaker.name %>">
 	<div class="row white">
 	<br>
-		<h1 class="centered"><%= @speaker.name %>
-  		<% if user_signed_in? %>
-  			<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
-  		<% end %>
-  		</h1>
+		<h1 class="centered"><%= @speaker.name %></h1>
 		<hr>
 		
 		<div class="col-md-9">
 			<%= @speaker.about %>
-		</div><!-- col-lg-6 -->
-		
+			<div class="text-right top-buffer50">
+			  <% if user_signed_in? %>
+			  	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
+			  <% end %>
+			</div>
+		</div>
+			
 		<div class="col-md-3">
 		  <h4>Contact <%= @speaker.name %></h4>
 		  <p>
@@ -40,9 +41,9 @@
     	  <% end %>
     	  
     	  <h4>Nearby Speakers</h4>
-    	  <ul>
+    	  <ul class="speakerList">
     	  <% @speaker.nearbys(500).each do |spk| %>
-    	    <li><%= link_to spk.name, speaker_path(spk) %></li>
+    	    <li class="speakerList"><%= link_to spk.name, speaker_path(spk) %></li>
     	  <% end %>
     	  </ul>
 		  </p>

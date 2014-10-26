@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
       @comment.user_id = current_user.id
       @comment.save
       redirect_to speaker_path(@speaker)
+      
     end
     
     def destroy
