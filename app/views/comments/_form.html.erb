@@ -1,0 +1,18 @@
+<%= simple_form_for([@speaker, @speaker.comments.build]) do |f| %>
+  <div class="row">
+    <div id="commentBody" class="col-md-12">
+      <div class="form-group">
+        <%= f.text_area :body, { class: 'form-control', size: "15x6", :placeholder => "Enter your coment" } %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="row">
+        <div class="col-md-12 text-right">
+           <%= f.submit 'Save', class: 'btn btn-default' %>
+          </div>
+      </div>
+    </div>
+      
+  </div>
+<% end %>

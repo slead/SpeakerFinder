@@ -7,7 +7,11 @@
 <div class="container" id="speaker" name="<%= @speaker.name %>">
 	<div class="row white">
 	<br>
-		<h1 class="centered"><%= @speaker.name %></h1>
+		<h1 class="centered"><%= @speaker.name %>
+  		<% if user_signed_in? %>
+  			<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
+  		<% end %>
+  		</h1>
 		<hr>
 		
 		<div class="col-md-9">
@@ -34,34 +38,53 @@
     	        <span id="span"><%= @speaker.website %></span><br/>
     	    <% end %>
     	  <% end %>
+    	  
+    	  <h4>Nearby Speakers</h4>
+    	  <ul>
+    	  <% @speaker.nearbys(500).each do |spk| %>
+    	    <li><%= link_to spk.name, speaker_path(spk) %></li>
+    	  <% end %>
+    	  </ul>
 		  </p>
 						
 		</div><!-- col-lg-6 -->
 	</div><!-- row -->
-	
-	<% if user_signed_in? %>
-  	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
-  <% end %>
   
-  <h3>Skills and specialities</h3>
+  <h3 style="text-align: center;">Skills and specialities</h3>
+  <hr>
   <p><em>Speaker's skills will be listed here once I figure out how to do that</em></p>
   
-  <h3>Nearby Speakers</h3>
-  <ul>
-  <% @speaker.nearbys(500).each do |spk| %>
-    <li><%= link_to spk.name, speaker_path(spk) %></li>
-  <% end %>
-  </ul>
-  
-  <h2>Comments</h2>
-  <ul>
-    <% @speaker.comments.each do |comment| %>
-      <li><%= comment.body %> </li>
-    <% end %>
-  </ul>
-  
-  <% if user_signed_in? %>
-    <%= render "comments/form" %>
-  <% end %>
+  <div id="comments" class="row">
+    <h3 style="text-align: center;">Comments</h3>
+    <hr>
+  		<div class="col-md-6">
+  			<div class="vg-spacing-1"></div>
+  			
+    			<!-- start comment -->
+    			<% @speaker.comments.each do |comment| %>
+      			<div class="vg-comment"> 
+      				<div>
+      					John Doe said:<br>
+      					<div class="vg-said">
+      					  <%= comment.body %>
+      					  <br>
+      					</div>
+      					<span id="comment-date"> <%= time_ago_in_words(comment.created_at) %> ago</span>
+      				</div>
+      			</div>
+      			<hr>
+    		  <% end %>
+    		</div>
+
+  		<div class="col-md-6">
+  			<div class="vg-spacing-1"></div>
+  			<% if user_signed_in? %>
+  			  <%= render "comments/form" %>
+  			<% end %>
+  			
+  		</div>
+  		<!-- end form -->
+  		
+  	  </div>
 		
 </div><!-- container -->
