@@ -8,12 +8,17 @@ class SpeakersController < SecuredController
   end
 
   def index
-    if params[:search]
-      @speakers = Speaker.search(params[:search]).order("name ASC")
-    elsif params[:geosearch]
-      @speakers = Speaker.near(params[:geosearch], 500).order("name ASC")
+#    if params[:search]
+#      @speakers = Speaker.search(params[:search]).order("name ASC")
+#    elsif params[:geosearch]
+#      @speakers = Speaker.near(params[:geosearch], 500).order("name ASC")
+#    else
+#      @speakers = Speaker.all.order("name ASC")
+#    end
+    if params[:search].present?
+      @speakers = Speaker.search(params[:search], page: params[:page])
     else
-      @speakers = Speaker.all.order("name ASC")
+      @speakers = Speaker.all.page params[:page]
     end
   end
   
@@ -57,6 +62,10 @@ class SpeakersController < SecuredController
     else
       render :edit
     end
+  end
+  
+  def autocomplete
+    render json: Speaker.search(params[:query], autocomplete: true, limit: 10).map(&:name)
   end
   
   private

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require twitter/typeahead
 //= require turbolinks
 //= require_tree .
 
@@ -20,4 +21,6 @@ $(function() {
   $( ".btnClearSearch" ).click(function() {
     $("#" + this.dataset.searchbox).val('');
   });
+          
 });
+

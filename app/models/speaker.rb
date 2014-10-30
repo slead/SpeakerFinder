@@ -1,5 +1,6 @@
 # Model for speakers
 class Speaker < ActiveRecord::Base
+  searchkick autocomplete: ['name']
   has_many :skills
   has_many :comments, dependent: :destroy
   validates_presence_of :name, :email, :city
@@ -20,9 +21,9 @@ class Speaker < ActiveRecord::Base
   after_validation :geocode, if: :city_changed?
   after_validation :reverse_geocode, if: :city_changed?
 
-  def self.search(query)
-    #perform a case-insensitive seach by name
-    where("LOWER(name) like ?", "%#{query.downcase}%") 
-  end
+#  def self.search(query)
+#    #perform a case-insensitive seach by name
+#    where("LOWER(name) like ?", "%#{query.downcase}%") 
+#  end
 
 end

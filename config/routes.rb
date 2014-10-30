@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     resources :comments
     resources :users
     resources :skills
+    collection do
+      post :import
+      get :autocomplete # <= add this line
+    end
   end
   resources :users
   resources :skills
