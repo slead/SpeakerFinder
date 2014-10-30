@@ -10,16 +10,16 @@
 		<h1 class="centered"><%= @speaker.name %></h1>
 		<hr>
 		
-		<div class="col-md-9">
+		<div class="col-md-8">
 			<%= @speaker.about %>
-			<div class="text-right top-buffer50">
+			<div class="top-buffer50">
 			  <% if user_signed_in? %>
 			  	<%= link_to raw('<i class="fa fa-pencil-square-o"></i>'), edit_speaker_path(@speaker) %>  	
 			  <% end %>
 			</div>
 		</div>
 			
-		<div class="col-md-3">
+		<div class="col-md-4">
 		  <h4>Contact <%= @speaker.name %></h4>
 		  <p>
 		  
@@ -58,7 +58,7 @@
   <div id="comments" class="row">
     <h3 style="text-align: center;">Comments</h3>
     <hr>
-  		<div class="col-md-6">
+  		<div class="col-md-10 col-md-offset-1">
   			<div class="vg-spacing-1"></div>
   			
     			<!-- start comment -->
@@ -76,16 +76,15 @@
       			<hr>
     		  <% end %>
     		</div>
+    	</div>
 
-  		<div class="col-md-6">
+  		<div class="col-md-8 col-md-offset-2">
   			<div class="vg-spacing-1"></div>
   			<% if user_signed_in? %>
   			  <%= render "comments/form" %>
   			<% end %>
   			
   		</div>
-  		<!-- end form -->
-  		
-  	  </div>
+	  </div>
 		
 </div><!-- container -->

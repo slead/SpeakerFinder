@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :speakers do
     resources :comments
     resources :users
+    resources :skills
   end
   resources :users
   resources :skills
