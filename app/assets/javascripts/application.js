@@ -17,10 +17,39 @@
 //= require turbolinks
 //= require_tree .
 
+//$(function() {
+//  $( ".btnClearSearch" ).click(function() {
+//    $("#" + this.dataset.searchbox).val('');
+//  });
+//  
+
+// constructs the suggestion engine
+var engine = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  remote: {
+    "url":'/speakers/autocomplete?query=%QUERY',
+    filter: function (speakers) {
+    // $.map converts the JSON array into a JavaScript array
+    return $.map(speakers, function (speaker) {
+      return {
+        value: speaker
+      };
+    });
+    }
+  }
+}); 
+engine.initialize();
+ 
 $(function() {
-  $( ".btnClearSearch" ).click(function() {
-    $("#" + this.dataset.searchbox).val('');
+  //Configure typeahead on the Speakers search field
+  $('#search').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+  {
+    source: engine.ttAdapter()
   });
-          
 });
 
