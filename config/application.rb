@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module SpeakerFinder
   class Application < Rails::Application
+    #http://rubyinrails.com/2014/02/rails-nameerror-uninitialized-constant-class-solution/
+    config.autoload_paths += %W(#{config.root}/lib)
   
     config.serve_static_assets = true
     config.assets.precompile += %w(vendor/modernizr *.png *.jpeg *.jpg *.gif)

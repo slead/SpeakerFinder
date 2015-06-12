@@ -17,6 +17,8 @@ class SpeakersController < SecuredController
 #    end
     if params[:search].present?
       @speakers = Speaker.search(params[:search], page: params[:page])
+    elsif params[:geosearch]
+      @speakers = Speaker.near(params[:geosearch], 500).order("name ASC")
     else
       @speakers = Speaker.all.page params[:page]
     end

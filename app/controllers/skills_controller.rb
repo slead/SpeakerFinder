@@ -9,7 +9,6 @@ class SkillsController < SecuredController
   
   def create
     @skill = Skill.find_or_create_by(skill_params)
-    byebug
     if @skill.save
       flash[:success] = "Skill #{@skill.title} saved successfully."
       redirect_to skills_path
